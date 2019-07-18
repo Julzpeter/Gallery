@@ -1,15 +1,12 @@
 from django.shortcuts import render,redirect
-from django.http  import HttpResponse,Http404
+from .models import Location,Category,Image
 # Create your views here.
 def welcome(request):
-        html = f'''
-        <html>
-            <body>
-                <h1>Welcome to My Gallery</h1>
-            </body>
-        </html>
-            '''
-        return render('html')
+    all_images = Image.objects.all()
+    category_results = Category.objects.all()
+    location_results = Location.objects.all()
+    return render(request, 'index.html', {'all_images': all_images, 'location_results': location_results, 'category_results': category_results})
+       
 
        
 
