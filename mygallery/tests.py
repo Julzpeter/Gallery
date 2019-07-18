@@ -9,6 +9,7 @@ class ImageTestClass(TestCase):
         self.new_category.save_category()
         self.new_location = Location(location_name='Nakuru')
         self.new_location.save_location()
-        self.new_image = Image(id=1,image_name='flamingo',image_description='Animals',image_path='')
+        # self.new_image = Image(id=1,image_name='flamingo',image_description='Animals',image_path='media/mygallery/')
+        
 
 
