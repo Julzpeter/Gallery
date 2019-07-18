@@ -12,6 +12,12 @@ class ImageTestClass(TestCase):
         # self.new_image = Image(id=1,image_name='flamingo',image_description='Animals',image_path='media/mygallery/')
 
     def tearDown(self):
-            
+        Category.objects.all().delete()
+        Location.objects.all().delete()
+        Image.objects.all().delete()
+
+    
+
+
 
 
