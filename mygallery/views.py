@@ -4,10 +4,10 @@ from .models import Location,Category,Image
 # Create your views here.
 
 def welcome(request):
-    all_images = Image.objects.all()
+    images = Image.objects.all()
     category_results = Category.objects.all()
     location_results = Location.objects.all()
-    return render(request, 'index.html')
+    return render(request, 'index.html', {"all_images":images})
 
 
 def search_results(request):
@@ -24,20 +24,16 @@ def search_results(request):
         return render(request, 'index.html', {"message": message})
 
 
-def get_category(request, category):
+def get_category(request):
     category_results = Category.objects.all()
     location_results = Location.objects.all()
-    category_result = Image.objects.filter(
-        image_category__category_name=category)
-    return render(request, 'index.html', {'all_images': category_result, 'category_results': category_results, 'location_results': location_results})
+    return render(request, 'index.html', {'category_results': category_results, 'location_results': location_results})
 
 
-def get_location(request, location):
+def get_location(request):
     category_results = Category.objects.all()
     location_results = Location.objects.all()
-    location_result = Image.objects.filter(
-        image_location__location_name=location)
-    return render(request, 'index.html', {'all_images': location_result, 'category_results': category_results, 'location_results': location_results})
+    return render(request, 'index.html', { 'category_results': category_results, 'location_results': location_results})
 
 
        
