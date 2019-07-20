@@ -3,8 +3,7 @@
 {{ block.super}}
 <style>
     body {
-        background-image:
-            url('http://images.unsplash.com/photo-1520390138845-fd2d229dd553?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9');
+        background-color: lightblue;
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -17,14 +16,19 @@
     .btn-default {
         border-radius: 20px;
         cursor: pointer;
-        margin-right:180px;
+        margin-right: 180px;
 
     }
-    .container1{
-        padding-bottom: 20px;
-        padding-bottom: 10px;
+
+    .container1 {
+        margin-right:20px;
+      
     }
-  
+    h2{
+        font-family: 'Akronim', cursive;
+        font-size:100px;
+        
+    }
 </style>
 
 <div class="container1">
@@ -39,71 +43,72 @@
             <li class="list-group-item">Wildlife</li>
         </ul>
     </div>
-    <div class="text-center" style="color:darkred;">
-        <h2 class="mb-5 font-weight-bold text-center">Gallery</h2>
+    <div class="text-center">
+        <h2> My Gallery</h2>
         <hr class="my-5">
     </div>
 
+
     <div class="container">
-        <div class="jumbotron2">
-            <div class="row">
-                {% for image in all_images %}
-                <div class="col-md-4 ftco-animate">
-                    <div class="card">
-                        <img src="{{image.image_path.url}}" class="img-thumbnail" data-toggle="modal"
-                            data-target="#myModal{{image.id}}" alt="" />
-                    </div>
+        <div class="row">
+            {% for image in all_images %}
+
+            <div class="col-md-4 ftco-animate">
+                <div class="card">
+                    <img src="{{image.image_path.url}}" class="img-thumbnail" data-toggle="modal"
+                        data-target="#myModal{{image.id}}" alt="" />
                 </div>
-
-                <div id="myModal{{image.id}}" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-
-
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                            </div>
-                            <div class="modal-body">
-                                <img src="{{image.image_path.url}}" class="img-thumbnail">
-                                <p style="color:blue">{{image.image_name}}</p>
-                                <p>{{image.image_location}}</p>
-                                <p>{{image.image_description}}</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" style="color: darkblue;" class="btn btn-default"
-                                    data-dismiss="modal">Close</button>
-                                    <br>
-                                    <br>
-                                    <br>
-                                <button type="button" name="button" class="btn btn-default"
-                                    value="{{image.image_path.url}}" onclick="copylink(this.value)">Copy Image
-                                    Link</button>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    </a>
-                </div>
-
-                {%endfor%}
-
             </div>
 
+            <div id="myModal{{image.id}}" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                        </div>
+                        <div class="modal-body">
+                            <img src="{{image.image_path.url}}" class="img-thumbnail">
+                            <p style="color:blue">{{image.image_name}}</p>
+                            <p>{{image.image_location}}</p>
+                            <p>{{image.image_description}}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" style="color: darkblue;" class="btn btn-default"
+                                data-dismiss="modal">Close</button>
+                            <br>
+                            <br>
+                            <br>
+                            <button type="button" name="button" class="btn btn-default" value="{{image.image_path.url}}"
+                                onclick="copylink(this.value)">Copy Image
+                                Link</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                </a>
+            </div>
+
+            {%endfor%}
+
         </div>
-        <script>
-            function copylink(value) {
-                function handler(event) {
-                    event.clipboardData.setData('text/plain', 'https://mygallery-mo.herokuapp.com' + value);
-                    event.preventDefault();
-                    document.removeEventListener('copy', handler, true);
-                }
-                document.addEventListener('copy', handler, true);
-                document.execCommand('copy');
 
+    </div>
+    <script>
+        function copylink(value) {
+            function handler(event) {
+                event.clipboardData.setData('text/plain', 'https://mygallery-mo.herokuapp.com' + value);
+                event.preventDefault();
+                document.removeEventListener('copy', handler, true);
             }
-        </script>
+            document.addEventListener('copy', handler, true);
+            document.execCommand('copy');
+
+        }
+    </script>
 
 
-        {% endblock %}
+    {% endblock %}
