@@ -29,6 +29,14 @@
         font-size:100px;
         
     }
+    p{
+        font-family: 'Sail', cursive;
+        font-size:20px;
+    }
+    li{
+        font-family: 'Sail', cursive;
+        font-size: 20px;
+    }
 </style>
 
 <div class="container1">
@@ -73,9 +81,9 @@
                         </div>
                         <div class="modal-body">
                             <img src="{{image.image_path.url}}" class="img-thumbnail">
-                            <p style="color:blue">{{image.image_name}}</p>
-                            <p>{{image.image_location}}</p>
-                            <p>{{image.image_description}}</p>
+                            <p style="color:rgb(0, 0, 0)";> Name: {{image.image_name}}</p>
+                            <p> Location: {{image.image_location}}</p>
+                            <p> Description: {{image.image_description}}</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" style="color: darkblue;" class="btn btn-default"
