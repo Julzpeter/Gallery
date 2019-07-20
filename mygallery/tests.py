@@ -41,7 +41,7 @@ class ImageTestClass(TestCase):
 
     def test_update_single_object_property(self):
         self.new_image.save_image()
-        filtered_object = Image.update_image('Sports')
+        filtered_object = Image.update_image('Sports','Atheletics')
         fetched = Image.objects.get(image_name='Sports')
         self.assertEqual(fetched.image_name, 'Sports')
 
