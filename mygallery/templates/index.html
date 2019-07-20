@@ -1,56 +1,50 @@
 {%extends 'base.html'%}
 {% block content %}
-<!-- {{ block.super}} -->
-
-<!-- <div class="container-fluid">
-    <!-- <div class="row">
-        <div class="row">
-            {% if all_images%}
-
-            {% else %}
-            <h2> Found 0 images for the search term {{message}}</h2>
-            {% endif %}
-
-        </div> -->
-<!-- </div> -->
-<div class="container" style="padding-top: 5%;">
+{{ block.super}}
+<style>
+body{
+background:plum;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+</style>
+<div class="container">
     <div class="row">
-        {% for image in all_images %}
-        <div class="col-md-4 ftco-animate">
-            <div class="card">
-                <img src="{{image.image_path.url}}" class="img-thumbnail" data-toggle="modal"
-                    data-target="#myModal{{image.id}}" alt="" />
-            </div>
-        </div>
-
-        <div id="myModal{{image.id}}" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-
-
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                    </div>
-                    <div class="modal-body">
-                        <img src="{{image.image_path.url}}" class="img-thumbnail">
-                        <p>{{image.image_name}}</p>
-                        <p>{{image.image_location}}</p>
-                        <p>{{image.image_description}}</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+            {% for image in all_images %}
+            <div class="col-md-4 ftco-animate">
+                <div class="card">
+                    <img src="{{image.image_path.url}}" class="img-thumbnail" data-toggle="modal"
+                        data-target="#myModal{{image.id}}" alt="" />
                 </div>
-
-
             </div>
-            </a>
+
+            <div id="myModal{{image.id}}" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                        </div>
+                        <div class="modal-body">
+                            <img src="{{image.image_path.url}}" class="img-thumbnail">
+                            <p style="color:blue">{{image.image_name}}</p>
+                            <p>{{image.image_location}}</p>
+                            <p>{{image.image_description}}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" style="color: darkblue;" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                </a>
+            </div>
+
+            {%endfor%}
+
         </div>
-
-        {%endfor%}
-
-    </div>
-
     {% endblock %}
-    
