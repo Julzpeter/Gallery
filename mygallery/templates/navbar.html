@@ -1,41 +1,8 @@
 <!-- <!-- {% load static %} -->
-<style>
-    form {
-        margin-left: 600px;
-        padding-top: 100px;
-        padding-bottom: 100px;
-
-    }
-
-    .navbar-nav {
-        margin-left: 1300px;
 
 
-    }
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    .navbar {
-        margin-left: 30px;
-        margin-right: 30px;
-        border-radius: 20px;
-
-
-    }
-
-    h1 {
-        color: aliceblue;
-        height: 50px;
-        margin-left: 600px;
-        margin-right: 500px;
-        float: center;
-    }
-    .btn-info{
-        border-radius:20px;
-    }
-</style>
-
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Gallery</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -45,10 +12,54 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Locations
-                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+</nav> -->
+<!-- <div class="jumbotron">
+    <h1><strong>
+            <em>
+                MY GALLERY </em></strong></h1>
+</div> -->
+<!-- 
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+    Locations
+</a> -->
+<!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    {% for category in location_results %}
+    <a class="dropdown-item" href="/location/{{category.location_name}}">{{category.location_name}}</a>
+
+    <div class="dropdown-divider"></div>
+
+
+    {% endfor %}
+</div> -->
+<!-- <a class="navbar-brand" href="/">Gallery</a>
+<form class="form-inline my-2 my-lg-0" action="{% url 'search_results' %}">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search by category" name="searchItem"
+        aria-label="Search" style="width: 500px; border-radius:20px;">
+    <button class="btn btn-outline-danger" type="submit">Search</button>
+</form> -->
+
+
+
+
+
+
+<nav class="navbar navbar-dark default-color">
+    <a class="navbar-brand" href="/">Gallery</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {% for category in location_results %}
                     <a class="dropdown-item" href="/location/{{category.location_name}}">{{category.location_name}}</a>
@@ -59,70 +70,11 @@
                     {% endfor %}
                 </div>
             </li>
-
         </ul>
-
+        <form class="form-inline my-2 my-lg-0" action="{% url 'search_results' %}">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search by category" name="searchItem"
+                aria-label="Search" style="width: 500px; border-radius:20px;">
+            <button class="btn btn-default" type="submit">Search</button>
+        </form>
     </div>
 </nav>
-<h1><strong>
-        <em>
-            My Gallery </em></strong></h1>
-<form class="form-inline my-2 my-lg-0" action="{% url 'search_results' %}">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" name="searchItem" aria-label="Search"
-        style="width: 500px; border-radius:20px;">
-    <!-- <button class="btn btn-outline-danger" type="submit">Search</button> -->
-    <button type="button" class="btn btn-info" type="submit">Search</button>
-</form>
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Gallery</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Locations
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        {% for category in location_results %}
-                        <a class="dropdown-item"
-                            href="/location/{{category.location_name}}">{{category.location_name}}</a>
-
-                        <div class="dropdown-divider"></div>
-
-
-                        {% endfor %}
-                    </div>
-                </li>
-
-            </ul>
-
-        </div>
-
-        <form class="form-inline my-2 my-lg-0" action="{% url 'search_results' %}">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" name="searchItem" aria-label="Search"
-                style="width: 500px; border-radius:20px;">
-            <button class="btn btn-outline-danger" type="submit">Search</button>
-        </form>
-    </nav>
-    <h1><strong>
-            <em>
-                My Gallery </em></strong></h1> -->
