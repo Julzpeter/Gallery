@@ -50,4 +50,4 @@ If you encounter any bags feel free to email me at chepngetichjuliet@gmail.com
 Contact me on chepngetichjuliet@gmail.com for any comments,reviews or advice
 
 ## MIT LICENSE
-[MIT]()
+[MIT](https://github.com/Julzpeter/Gallery/blob/master/LICENSE)
