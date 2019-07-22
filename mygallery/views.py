@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, Http404
 from .models import Location,Category,Image
+import pyperclip
 
 # Create your views here.
 
@@ -36,10 +37,12 @@ def get_location(request):
     location_results = Location.objects.all()
     return render(request, 'index.html', { 'category_results': category_results, 'location_results': location_results})
 
+# def cop(request,id):
 
-       
-
-
-
-    
+#     image = Image.objects.get(pk=id)
+#     pyperclip.copy(image.image_path)
+#     print('-----------------------------------')
+#     print(image.image_path)
+#     print('copied')
+#     return 'Copied.'
     
