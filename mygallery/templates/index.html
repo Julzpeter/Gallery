@@ -19,11 +19,12 @@
     .btn-default {
         border-radius: 2px;
         cursor: pointer;
-        
+
 
     }
-    .btn-sm{
-        border-radius:20px;
+
+    .btn-sm {
+        border-radius: 20px;
     }
 
     .container1 {
@@ -46,7 +47,6 @@
         font-family: 'Sail', cursive;
         font-size: 20px;
     }
-    
 </style>
 
 <div class="container1">
@@ -96,13 +96,23 @@
                             <p> Description: {{image.image_description}}</p>
                         </div>
                         <div class="modal-footer">
-                            <button  class="btn btn-default btn btn-sm" data-dismiss="modal">Close</button>
+                            <div class="container">
+                                <button class="btn btn-default btn btn-sm" data-dismiss="modal">Close</button>
+
+                            </div>
+
                             <br>
                             <br>
                             <br>
                             <input class="form-control input-lg" type="text" id=form
-                                value="https://gallery-12338.herokuapp.com{{image.image_path.url}}" id="{{image.id}}-url">
-                            <button class="btn btn-default btn btn-sm" onclick="copyToClipboard('{{image.id}}-url')">Copy Link</button>
+                                value="https://gallery-12338.herokuapp.com{{image.image_path.url}}"
+                                id="{{image.id}}-url">
+                            <div class="container">
+                                <button class="btn btn-default btn btn-sm"
+                                    onclick="copyToClipboard('{{image.id}}-url')">Copy Link</button>
+
+                            </div>
+
                         </div>
                     </div>
 
