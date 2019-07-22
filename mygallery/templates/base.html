@@ -77,6 +77,17 @@
     </script>
     <script src="../../static/js/google-map.js"></script>
     <script src="../../static/js/main.js"></script> -->
+    {% block scripts %}
+    {% bootstrap_javascript %}
+    <script type="text/javascript">
+        function copyToClipboard(element) {
+            var copyUrl = document.getElementById(element)
+            copyUrl.select();
+            document.execCommand("copy")
+        }
+    </script>
+    {% endblock %}
+
 </body>
 
 </html>
