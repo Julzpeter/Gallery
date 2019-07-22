@@ -17,10 +17,13 @@
     }
 
     .btn-default {
-        border-radius: 20px;
+        border-radius: 2px;
         cursor: pointer;
-        margin-right: 180px;
+        
 
+    }
+    .btn-sm{
+        border-radius:20px;
     }
 
     .container1 {
@@ -43,6 +46,7 @@
         font-family: 'Sail', cursive;
         font-size: 20px;
     }
+    
 </style>
 
 <div class="container1">
@@ -82,7 +86,7 @@
 
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <button type="button btn btn-sm" class="close" data-dismiss="modal">&times;</button>
 
                         </div>
                         <div class="modal-body">
@@ -92,15 +96,13 @@
                             <p> Description: {{image.image_description}}</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" style="color: darkblue;" class="btn btn-default"
-                                data-dismiss="modal">Close</button>
+                            <button  class="btn btn-default btn btn-sm" data-dismiss="modal">Close</button>
                             <br>
                             <br>
                             <br>
-                            <input class="form-control input-lg" type="text"
-                                value="https://gallery-12338.herokuapp.com{{image.image_path.url}}">
-                            <button class="btn btn-outline-info" onclick="copyToClipboard('{{image.id}}-url')">Copy
-                                Image Url</button>
+                            <input class="form-control input-lg" type="text" id=form
+                                value="https://gallery-12338.herokuapp.com{{image.image_path.url}}" id="{{image.id}}-url">
+                            <button class="btn btn-default btn btn-sm" onclick="copyToClipboard('{{image.id}}-url')">Copy Link</button>
                         </div>
                     </div>
 
@@ -117,5 +119,10 @@
 
     {% endblock %}
 
-    
-   
+
+
+
+
+    <button class="btn btn-default" onclick="CopyFunction()">
+        <i class="fa fa-copy" style="color: #d6962c"></i> Copy Link
+    </button>
