@@ -97,9 +97,10 @@
                             <br>
                             <br>
                             <br>
-                            <button class="btn btn-default" onclick="CopyFunction()">
-                                <i class="fa fa-copy" style="color: #d6962c"></i> Copy Link
-                            </button>
+                            <input class="form-control input-lg" type="text"
+                                value="https://gallery-12338.herokuapp.com{{image.image_path.url}}">
+                            <button class="btn btn-outline-info" onclick="copyToClipboard('{{image.id}}-url')">Copy
+                                Image Url</button>
                         </div>
                     </div>
 
@@ -115,3 +116,6 @@
     </div>
 
     {% endblock %}
+
+    
+   
